@@ -43,3 +43,6 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Ignore the Txt in resources so I stop accidently uploading input :facepalm: ###
+**/src/main/resources/*.txt

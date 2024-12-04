@@ -4,7 +4,7 @@ import advent2024.util.FileReaderUtil
 
 class day3Puzzle {
 
-    fun solvePart1(){
+    fun solveDay3(){
         val input = FileReaderUtil().readFileAsText("Day3.txt")
         val regex = Regex("(mul\\(\\d{1,3},\\d{1,3}\\))|(do(?:n't)?\\(\\))")
         val matches = regex.findAll(input)
@@ -21,13 +21,9 @@ class day3Puzzle {
             }
             else {
                 val values = match.value.substringAfter("(").substringBefore(")").split(",")
-                val num1 = values[0].toInt()
-                val num2 = values[1].toInt()
-                val product = num1 * num2
-                println("$num1 * $num2 = $product")
+                val product = values[0].toInt() * values[1].toInt()
                 if(enabled) total += product
             }
         }
-        println(total)
     }
 }
