@@ -7,5 +7,9 @@ class FileReaderUtil {
         val inputFile = object {}.javaClass.getResourceAsStream("/$fileName")?.bufferedReader()?.readLines()
         return inputFile.toString()
     }
+
+    fun readFileAsLines (fileName: String) : List<String>? {
+        return object {}.javaClass.getResourceAsStream("/$fileName")?.bufferedReader()?.readLines()
+    }
     
 }

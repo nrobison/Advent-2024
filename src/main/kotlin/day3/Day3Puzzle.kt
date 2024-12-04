@@ -2,7 +2,7 @@ package advent2024.day3
 
 import advent2024.util.FileReaderUtil
 
-class day3Puzzle {
+class Day3Puzzle {
 
     fun solveDay3(){
         val input = FileReaderUtil().readFileAsText("Day3.txt")
