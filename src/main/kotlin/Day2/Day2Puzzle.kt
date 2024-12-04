@@ -11,12 +11,12 @@ enum class LineDirection{
     INCREASE,
     DECREASE
 }
-
+    val fileReaderUtil = FileReaderUtil()
     fun solvePart1() : Int{
-        val input = FileReaderUtil().readFileAsLines("Day2.txt") ?: emptyList()
+        val input = fileReaderUtil.readFileAsLines("Day2.txt") ?: emptyList()
         var numberOfSafeRows = 0
         for(line in input){
-            val numbers = convertLineToListOfNumbers(line)
+            val numbers = fileReaderUtil.convertLineToListOfNumbers(line)
             if(checkIfLineIsValid(numbers)) numberOfSafeRows += 1
         }
         return numberOfSafeRows
@@ -26,7 +26,7 @@ enum class LineDirection{
         val input = FileReaderUtil().readFileAsLines("Day2.txt") ?: emptyList()
         var numberOfSafeRows = 0
         for(line in input) {
-            val numbers = convertLineToListOfNumbers(line)
+            val numbers = fileReaderUtil.convertLineToListOfNumbers(line)
             if (checkIfLineIsValid(numbers)) numberOfSafeRows += 1
             //Got to have at least 3 elements to remove one and check
             else if(numbers.size > 2){
@@ -44,12 +44,6 @@ enum class LineDirection{
         return numberOfSafeRows
     }
 
-    private fun convertLineToListOfNumbers(lineOfText: String): List<Int>  {
-        return lineOfText.split(Regex("\\D+")) // Split by non-digit characters
-            .filter { it.isNotEmpty() } // Remove empty strings
-            .map { it.toInt() } // Convert to integers
-    }
-
     private fun checkIfLineIsValid(lineOfNumbers: List<Int>) : Boolean{
         var currentNumber =0
         var currentDirection = LineDirection.NONE
@@ -60,7 +54,7 @@ enum class LineDirection{
             currentNumber = lineOfNumbers[index]
             val nextNumber = lineOfNumbers[index + 1]
             val newDirection = checkIncreaseOrDecrease(currentNumber,nextNumber)
-            println("Current number $currentNumber || current index $index || next number $nextNumber || new direction $newDirection")
+            //println("Current number $currentNumber || current index $index || next number $nextNumber || new direction $newDirection")
             if(currentDirection == LineDirection.NONE) currentDirection = newDirection
             else if(newDirection != currentDirection) {
                 return false

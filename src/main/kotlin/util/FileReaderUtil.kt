@@ -11,5 +11,11 @@ class FileReaderUtil {
     fun readFileAsLines (fileName: String) : List<String>? {
         return object {}.javaClass.getResourceAsStream("/$fileName")?.bufferedReader()?.readLines()
     }
+
+    fun convertLineToListOfNumbers(lineOfText: String): List<Int>  {
+        return lineOfText.split(Regex("\\D+")) // Split by non-digit characters
+            .filter { it.isNotEmpty() } // Remove empty strings
+            .map { it.toInt() } // Convert to integers
+    }
     
 }
