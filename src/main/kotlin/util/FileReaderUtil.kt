@@ -17,5 +17,9 @@ class FileReaderUtil {
             .filter { it.isNotEmpty() } // Remove empty strings
             .map { it.toInt() } // Convert to integers
     }
+
+    fun convertLinesToArrayOfChars(lines: List<String>) : Array<CharArray> {
+        return lines.map { it.toCharArray() }.toTypedArray()
+    }
     
 }
