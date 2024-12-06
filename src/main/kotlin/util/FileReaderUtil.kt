@@ -21,5 +21,10 @@ class FileReaderUtil {
     fun convertLinesToArrayOfChars(lines: List<String>) : Array<CharArray> {
         return lines.map { it.toCharArray() }.toTypedArray()
     }
+
+    fun convertLineToPairOfNumbers(lineOfText: String): Pair<Int,Int>  {
+      val split =  lineOfText.split(Regex( "\\|")).filter { it.isNotEmpty() }
+      return Pair(split[0].toInt(), split[1].toInt())
+    }
     
 }

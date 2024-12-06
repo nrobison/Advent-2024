@@ -11,7 +11,7 @@ class Day4Puzzle {
         val numberOfFinds = findAllXMAS(arrayOfTexts)
         return numberOfFinds
     }
-    
+
     fun findAllXMAS(grid: Array<CharArray>): Int {
         val rows = grid.size
         val cols = grid[0].size
@@ -33,8 +33,6 @@ class Day4Puzzle {
                 }
             }
             if (word == "XMAS" || word == "SAMX") {
-                println("Did we found XMAS? The word is: $word and ${word == "XMAS" || word == "SAMX"}")
-                println("Order: ${order.toString()}")
                 if (!occurrences.contains(order.reversed()) && !occurrences.contains(order)) {
                     //Add occurance if it's not a backwards of one already found
                     occurrences.add(order)
@@ -89,8 +87,6 @@ class Day4Puzzle {
                 }
             }
             if (word == "MAS" || word == "SAM") {
-                println("Did we found MAS? The word is: $word and ${word == "MAS" || word == "SAM"}")
-                println("Order: ${order.toString()}")
                 if (!occurrences.contains(order.reversed()) && !occurrences.contains(order)) {
                     //Add occurance if it's not a backwards of one already found
                     occurrences.add(order)
