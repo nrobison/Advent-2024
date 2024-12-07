@@ -3,8 +3,10 @@ package advent2024
 import advent2024.Day1.Day1Puzzle
 import advent2024.Day4.Day4Puzzle
 import advent2024.Day5.Day5Puzzle
+import advent2024.Day6.Day6Puzzle
 import advent2024.day2Puzzle.Day2Puzzle
 import advent2024.day3.Day3Puzzle
+import advent2024.util.FileReaderUtil
 
 fun main() {
 //    val day1 = Day1Puzzle()
@@ -19,8 +21,10 @@ fun main() {
 //    println("Day 4 Part 1 ${day4.solvePart1()}")
 //    println("Day 4 Part 2 ${day4.solvePart2()}")
 
-    val day5 = Day5Puzzle()
-    println("Day 5 Part 1: ${day5.solvePart1()}")
+//    val day5 = Day5Puzzle()
+//    println("Day 5 Part 1: ${day5.solvePart1()}")
 
+    val day6 = Day6Puzzle()
+    day6.solve()
 
 }
