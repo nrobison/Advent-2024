@@ -4,6 +4,7 @@ import advent2024.Day1.Day1Puzzle
 import advent2024.Day4.Day4Puzzle
 import advent2024.Day5.Day5Puzzle
 import advent2024.Day6.Day6Puzzle
+import advent2024.Day7.Day7Puzzle
 import advent2024.day2Puzzle.Day2Puzzle
 import advent2024.day3.Day3Puzzle
 import advent2024.util.FileReaderUtil
@@ -23,8 +24,10 @@ fun main() {
 
 //    val day5 = Day5Puzzle()
 //    println("Day 5 Part 1: ${day5.solvePart1()}")
-
-    val day6 = Day6Puzzle()
-    day6.solve()
-
+//
+//    val day6 = Day6Puzzle()
+//    day6.solve()
+    val day7 = Day7Puzzle()
+    println("Day7 Part 1 total of solvable ${day7.solvePart1()}")
+    println("Day 7 Part 2 total: ${day7.solvePart2()}")
 }
