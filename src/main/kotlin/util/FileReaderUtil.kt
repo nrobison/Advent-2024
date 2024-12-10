@@ -26,5 +26,9 @@ class FileReaderUtil {
       val split =  lineOfText.split(Regex( "\\|")).filter { it.isNotEmpty() }
       return Pair(split[0].toInt(), split[1].toInt())
     }
+
+    fun convertLineOfTextToInts(lineOfText: String): IntArray {
+        return lineOfText.filterNot { it == '[' || it == ']' }.map { it.digitToInt() }.toIntArray()
+    }
     
 }
