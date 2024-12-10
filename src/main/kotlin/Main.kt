@@ -1,6 +1,7 @@
 package advent2024
 
 import advent2024.Day1.Day1Puzzle
+import advent2024.Day10.Day10Puzzle
 import advent2024.Day4.Day4Puzzle
 import advent2024.Day5.Day5Puzzle
 import advent2024.Day6.Day6Puzzle
@@ -34,6 +35,9 @@ fun main() {
 //    println("Day 7 Part 2 total: ${day7.solvePart2()}")
 //    val day8 = Day8Puzzle()
 //    day8.solve()
-    val day9 = Day9Puzzle()
-    day9.solvePart1()
+//    val day9 = Day9Puzzle()
+//    day9.solvePart1()
+    val day10 = Day10Puzzle()
+    day10.solve(false)
+    day10.solve(true)
 }
