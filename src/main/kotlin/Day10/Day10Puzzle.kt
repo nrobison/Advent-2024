@@ -47,7 +47,7 @@ class Day10Puzzle {
             currentPath.removeLast()
             return
         }
-        //Part 1 can't have multiple points with same start and end point. 
+        //Part 1 can't have multiple points with same start and end point.
         else if(currentValue == 9 && !validPaths.contains(Pair(currentPath.first(),currentPath.last()))) {
             validPaths.add(Pair(currentPath.first(),currentPath.last()))
             //   printPath(grid[0].size, grid.size, currentPath)

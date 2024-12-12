@@ -18,6 +18,13 @@ class FileReaderUtil {
             .map { it.toInt() } // Convert to integers
     }
 
+    fun convertLineToListOfLongs(lineOfText: String): List<Long>  {
+        return lineOfText.split(Regex("\\D+")) // Split by non-digit characters
+            .filter { it.isNotEmpty() } // Remove empty strings
+            .map { it.toLong() } // Convert to integers
+    }
+
+
     fun convertLinesToArrayOfChars(lines: List<String>) : Array<CharArray> {
         return lines.map { it.toCharArray() }.toTypedArray()
     }
@@ -30,5 +37,5 @@ class FileReaderUtil {
     fun convertLineOfTextToInts(lineOfText: String): IntArray {
         return lineOfText.filterNot { it == '[' || it == ']' }.map { it.digitToInt() }.toIntArray()
     }
-    
+
 }
