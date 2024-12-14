@@ -1,5 +1,4 @@
 package advent2024.util
-import java.io.File
 
 class FileReaderUtil {
 
@@ -36,6 +35,25 @@ class FileReaderUtil {
 
     fun convertLineOfTextToInts(lineOfText: String): IntArray {
         return lineOfText.filterNot { it == '[' || it == ']' }.map { it.digitToInt() }.toIntArray()
+    }
+
+    fun readLineIntoTwoPairsOfInts(lineOfText: String) : Pair<Point,Point>?{
+        val parts = lineOfText.split(" ")
+        if (parts.size != 2) return null
+
+        val aStr = parts[0].substring(2) // Remove "{char}="
+        val bStr = parts[1].substring(2) // Remove "{char}="
+
+        try {
+            val aCoords = aStr.split(",").map { it.toInt() }
+            val bCoords = bStr.split(",").map { it.toInt() }
+
+            if (aCoords.size != 2 || bCoords.size != 2) return null
+
+            return Pair(Point(aCoords[0], aCoords[1]), Point(bCoords[0], bCoords[1]))
+        } catch (e: NumberFormatException) {
+            return null
+        }
     }
 
 }
