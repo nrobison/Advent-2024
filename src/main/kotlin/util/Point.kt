@@ -1,13 +1,20 @@
 package advent2024.util
 
-import advent2024.Day13.Day13Puzzle
+data class Point(var x: Int, var y: Int) : Cloneable{
 
-data class Point(var x: Int, var y: Int) {
+    public override fun clone(): Point {
+        return super.clone() as Point
+    }
 
      fun plus (pointToAdd : Point){
         x += pointToAdd.x
         y += pointToAdd.y
      }
+
+    fun sub (pointToSub: Point){
+        x -= pointToSub.x
+        y -= pointToSub.y
+    }
 
     override fun equals(other: Any?): Boolean {
         if(other is Point){

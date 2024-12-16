@@ -29,12 +29,7 @@ class Day11Puzzle {
                 }
                 number++
             }
-//            var line = ""
-//            println("Adjustment")
-//            for(item in numbers){
-//                line += "$item "
-//            }
-//            println(line)
+
         }
         println("Number of stones = ${numbers.size}")
     }

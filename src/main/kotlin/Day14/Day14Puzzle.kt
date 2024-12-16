@@ -2,7 +2,6 @@ package advent2024.Day14
 
 import advent2024.util.FileReaderUtil
 import advent2024.util.Point
-import java.awt.geom.Point2D
 
 
 class Day14Puzzle {
