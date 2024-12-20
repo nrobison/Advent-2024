@@ -27,11 +27,11 @@ class Day17Puzzle {
         var resultList = ""
         println("Output of program is ${programOutput}" )
         //Reset for Part Two
-        registerA = lines!![0].split(':')[1].trim().toLong()
-        registerB = lines[1].split(':')[1].trim().toLong()
-        registerC = lines[2].split(':')[1].trim().toLong()
-        pointer = 0
-        programOutput.clear()
+        resetForPartTwo(0)
+        //solvePartTwo()
+        //Start off with 0 for part 2
+        val partTwo = findRegisterAForProgramOutput(0)
+        println("Solved 2: $partTwo")
     }
 
     fun resetForPartTwo(newAValue: Long) {
@@ -41,6 +41,34 @@ class Day17Puzzle {
         registerC = 0L
         programOutput.clear()
 
+    }
+
+    //Modified DFS
+    private fun findRegisterAForProgramOutput(value: Long): Long?{
+        //Get a range of value to value + 7
+        val rangeOfValues = value..value+8
+        //For each value we run through them until we get the first not null value
+        val result = rangeOfValues.firstNotNullOfOrNull {  newA ->
+            //Reset the registers + output and set register A to new value
+            resetForPartTwo(newA)
+            //Rerun the program using A
+            runProgramPartOne()
+            //Get list of the program containing the last elements up to output size and checks to see if matches our output
+            if(program.takeLast(programOutput.size) == programOutput){
+                if(program == programOutput){
+                     newA
+                }
+                else{
+                    //shift bits left, take largest and start again
+                    val shift = maxOf(newA shl 3, 8)
+                    findRegisterAForProgramOutput(shift)
+                }
+            }
+            else{
+                null
+            }
+        }
+        return result
     }
 
 
