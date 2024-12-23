@@ -12,6 +12,7 @@ import advent2024.Day19.Day19Puzzle
 import advent2024.Day20.Day20Puzzle
 import advent2024.Day21.Day21Puzzle
 import advent2024.Day22.Day22Puzzle
+import advent2024.Day23.Day23Puzzle
 import advent2024.Day4.Day4Puzzle
 import advent2024.Day5.Day5Puzzle
 import advent2024.Day6.Day6Puzzle
@@ -68,6 +69,7 @@ fun main() {
     val day20 = Day20Puzzle()
     day20.solve()
     val day21 = Day21Puzzle()
-    day21.solve()
+ //   day21.solve()
     Day22Puzzle().solve()
+    Day23Puzzle().solve()
 }

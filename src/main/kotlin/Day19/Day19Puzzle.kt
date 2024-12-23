@@ -48,7 +48,7 @@ class Day19Puzzle {
     fun backTracking(targetCombo: String, currentString: String) : Boolean {
 
         if(currentString == targetCombo){
-            println("Found True: looking for $targetCombo and found $currentString")
+            //println("Found True: looking for $targetCombo and found $currentString")
             return true
         }
         //String too long
