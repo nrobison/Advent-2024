@@ -1,11 +1,11 @@
 package advent2024.Day20
 
 import advent2024.util.FileReaderUtil
+import advent2024.util.MapMarker
 import advent2024.util.Point
-import java.util.*
+import advent2024.util.RacePoint
 import kotlin.math.abs
-import kotlin.math.max
-import kotlin.math.min
+
 
 class Day20Puzzle {
 
@@ -22,23 +22,6 @@ class Day20Puzzle {
         var usedCheatOne: Point?,
         var usedCheatTwo: Point?
     )
-
-    enum class MapMarker {
-        START,
-        END,
-        WALL,
-        OPEN
-    }
-
-    data class RacePoint(val char: Char) {
-        val type = when (char) {
-            '#' -> MapMarker.WALL
-            'S' -> MapMarker.START
-            'E' -> MapMarker.END
-            '.' -> MapMarker.OPEN
-            else -> throw IllegalArgumentException("Invalid map character: $char") // Handle invalid characters
-        }
-    }
 
     //var raceMap = mapOf<Point, RacePoint>()
     fun solve() {
@@ -93,23 +76,6 @@ class Day20Puzzle {
     }
 
     fun findCheatPathsManhattan(maxSpace: Int, minDistance: Int) {
-        //Get a range of all cheats.
-//        val result = visitedPoints.mapIndexed { index, point ->
-//            //Use a range from index + min distance +2 to vistedPoints size (our found path)
-//            (index + (minDistance +2)..<visitedPoints.size).count{
-//                eInd -> manhattanDistance(point, visitedPoints[eInd]) <= maxSpace
-//                    && eInd - index - manhattanDistance(point,visitedPoints[eInd]) >= minDistance
-//            }}.sum()
-//        println("Cheats that are max $maxSpace spaces and minimum time saving of $minDistance are $result")
-//        }
-//        val cheatsInRange = result.filter { range ->
-//            range.first < range.last &&
-//            manhattanDistance(visitedPoints[range.first], visitedPoints[range.last]) <= maxSpace &&
-//                    range.last - range.first - manhattanDistance(visitedPoints[range.first],visitedPoints[range.last]) >= minDistance
-//        }
-//
-//    }
-//
         for (index in visitedPoints.indices) {
             val range = (index + minDistance + 2)..visitedPoints.size
             range.forEach { subItem ->

@@ -7,12 +7,16 @@ import advent2024.Day12.Day12Puzzle
 import advent2024.Day13.Day13Puzzle
 import advent2024.Day14.Day14Puzzle
 import advent2024.Day15.Day15Puzzle
+import advent2024.Day16.Day16Puzzle
 import advent2024.Day17.Day17Puzzle
+import advent2024.Day18.Day18Puzzle
 import advent2024.Day19.Day19Puzzle
 import advent2024.Day20.Day20Puzzle
 import advent2024.Day21.Day21Puzzle
 import advent2024.Day22.Day22Puzzle
 import advent2024.Day23.Day23Puzzle
+import advent2024.Day24.Day24Puzzle
+import advent2024.Day25.Day25Puzzle
 import advent2024.Day4.Day4Puzzle
 import advent2024.Day5.Day5Puzzle
 import advent2024.Day6.Day6Puzzle
@@ -21,7 +25,6 @@ import advent2024.Day8.Day8Puzzle
 import advent2024.Day9.Day9Puzzle
 import advent2024.day2Puzzle.Day2Puzzle
 import advent2024.day3.Day3Puzzle
-import advent2024.util.FileReaderUtil
 
 fun main() {
     val day1 = Day1Puzzle()
@@ -62,8 +65,10 @@ fun main() {
     day14.solve()
     val day15 = Day15Puzzle()
     day15.solve()
+    Day16Puzzle().solve()
     val day17 = Day17Puzzle()
     day17.solve()
+    Day18Puzzle().solve()
     val day19 = Day19Puzzle()
     day19.solve()
     val day20 = Day20Puzzle()
@@ -72,4 +77,6 @@ fun main() {
  //   day21.solve()
     Day22Puzzle().solve()
     Day23Puzzle().solve()
+    Day24Puzzle().solve()
+    Day25Puzzle().solve()
 }
